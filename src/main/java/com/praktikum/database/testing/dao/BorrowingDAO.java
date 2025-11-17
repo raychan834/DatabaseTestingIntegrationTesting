@@ -4,7 +4,7 @@ package com.praktikum.database.testing.dao;
 import com.praktikum.database.testing.config.DatabaseConfig;
 import com.praktikum.database.testing.model.Borrowing;
 import java.sql.*;
-import java.util.ArrayList;
+        import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -47,6 +47,8 @@ public class BorrowingDAO {
                 borrowing.setUpdatedAt(rs.getTimestamp("updated_at"));
                 return borrowing;
             }
+            // Tambahan: throw exception jika create gagal
+            throw new SQLException("Gagal membuat borrowing record, tidak ada ID yang di-return.");
         }
     }
 
